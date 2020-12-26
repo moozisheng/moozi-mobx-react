@@ -1,10 +1,9 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
-import Child from './Children';
 import Todo from './Todo'
 
 // step2. 创建视图 以响应状态的变化
-@observer
+// @observer
 class TodoList extends Component {
 
   constructor(props) {
