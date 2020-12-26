@@ -1,0 +1,22 @@
+{
+  "name": "moozi-mobx-react",
+  "version": "1.0.0",
+  "description": "mobx-react 源码实现",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moozisheng/moozi-mobx-react.git"
+  },
+  "keywords": [
+    "mobx-react"
+  ],
+  "author": "moozi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moozisheng/moozi-mobx-react/issues"
+  },
+  "homepage": "https://github.com/moozisheng/moozi-mobx-react#readme"
+}
