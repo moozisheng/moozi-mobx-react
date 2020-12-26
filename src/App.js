@@ -1,11 +1,14 @@
-import React from "react";
-import TodoList from "./pages/TodoList";
-import todoStore from './store/todoStore';
+import React, {useState} from "react";
+import UseLocalStore from "./pages/UseLocalStore";
 
 export default function App(props) {
+  const [countInit, setCountInit] = useState(-1);
   return (
     <div>
-      <TodoList todoStore={todoStore} />
+      <button onClick={() => setCountInit(countInit + 1)}>
+        add countInit{countInit}
+      </button>
+      <UseLocalStore init={countInit} />
     </div>
   );
 }
