@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
 import Todo from './Todo'
+import { Observer } from '../m-mobx-react-lite'
 
 
 
@@ -22,8 +23,8 @@ class TodoList extends Component {
             ref={this.inputRef}
           />
         ))}
-        {/*  TodoList 组件不是响应式组件，因此  问完成任务 不会更新 */}
-        <p>未完成任务： {this.props.todoStore.unfinishedCount}个</p>
+        {/*  TodoList 组件不是响应式组件，因此可以使用 Observer 将组件 p 变成响应式组件 */}
+        <Observer>{() => (<p>未完成任务： {this.props.todoStore.unfinishedCount}个</p>)}</Observer>
       </div>
     );
   }
