@@ -39,6 +39,7 @@ class TodoList extends Component {
           count={{count}}
         />
       ))}
+      {/* TodoList 组件不是一个响应式组件，因此  未完成任务 不会更新 */}
       <p>未完成任务： {this.props.todoStore.unfinishedCount}个</p>
       {/* <Child count={{count}} /> */}
     </div>
