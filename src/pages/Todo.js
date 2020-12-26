@@ -19,38 +19,38 @@ import {observer, Observer, useObserver} from "mobx-react";
 // });
 
 // 方法2： Observer component
+// const Todo = ({todo, change}) => {
+//   return (
+//     <Observer>
+//       {() => (
+//         <div>
+//           <input
+//             id={todo.title}
+//             type="checkbox"
+//             checked={todo.finished}
+//             onChange={() => change(todo)}
+//           />
+//           <label for={todo.title}>{todo.title}</label>
+//         </div>
+//       )}
+//     </Observer>
+//   );
+// };
+
+// 方法3： useObserver hook
 const Todo = ({todo, change}) => {
-  return (
-    <Observer>
-      {() => (
-        <div>
-          <input
+    return useObserver(() => (
+      <div>
+        <input
             id={todo.title}
             type="checkbox"
             checked={todo.finished}
             onChange={() => change(todo)}
           />
           <label for={todo.title}>{todo.title}</label>
-        </div>
-      )}
-    </Observer>
-  );
+      </div>
+    ));
 };
-
-// // 方法3： useObserver hook
-// const Todo = ({todo, change}) => {
-//     return useObserver(() => (
-//       <div>
-//         <input
-//           type="checkbox"
-//           checked={todo.finished}
-//           //onChange={() => (todo.finished = !todo.finished)}
-//           onChange={() => change(todo)}
-//         />
-//         {todo.title}
-//       </div>
-//     ));
-// };
 
 
 export default Todo;
