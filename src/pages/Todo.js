@@ -1,12 +1,13 @@
 import React from "react";
 // import {observer, Observer, useObserver} from "mobx-react";
 
-// 使用自定义的 useObserver 给组件添加响应
-import {useObserver} from '../m-mobx-react-lite'
+// 使用自定义的 observer 给组件添加响应
+import { observer } from '../m-mobx-react-lite'
 
-
-const Todo = ({todo, change}) => {
-    return useObserver(() => (
+const Todo = observer(
+  ({todo, change}, ref) => {
+    console.log("input value", ref.current && ref.current.value); //sy-log
+    return (
       <div>
         <input
             id={todo.title}
@@ -16,8 +17,10 @@ const Todo = ({todo, change}) => {
           />
           <label htmlFor={todo.title}>{todo.title}</label>
       </div>
-    ));
-};
+    );
+  },
+  {forwardRef: true}
+);
 
 
 export default Todo;
