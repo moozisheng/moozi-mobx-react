@@ -28,7 +28,6 @@ function UseLocalStore(props) {
             return this.count % 2 ? "😜" : "🏃";
             },
             get specialNum() {
-                console.log('==specialNum=')
             return newProps.init > -1 && newProps.init < 10
                 ? "0" + newProps.init
                 : newProps.init;
@@ -36,7 +35,7 @@ function UseLocalStore(props) {
         }),
         newProps
     );
-    // useObserver 将组件转换成响应式组件
+    // useObserver 将组件转换成响应式组件 useObserver会引起组件的整体渲染
     // return useObserver(() => (
     //     <div className="border">
     //     <h3>UseLocalStore</h3>
