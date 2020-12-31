@@ -9,7 +9,6 @@ export default function App(props) {
   const [countInit, setCountInit] = useState(-1);
   return (
     <div>
-  
       <TodoList todoStore={todoStore} />
     </div>
   );

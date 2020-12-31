@@ -2,5 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "./index.css";
+import { Provider } from 'mobx-react';
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import {todoStore} from "./store/index";
+
+
+
+ReactDOM.render(
+  <Provider todoStore={todoStore} omg="omg-omg">
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
